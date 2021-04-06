@@ -45,7 +45,7 @@ export default function App() {
       <div>employeeName: {currentEmployee.employeeName}</div>
       <div>employeeDepartmanet: {currentEmployee.employeeDepartment}</div>
       <div>
-        Employee Name :{" "}
+        Employee Name :
         <input
           onChange={handleNameChange}
           value={currentEmployee.employeeName}
