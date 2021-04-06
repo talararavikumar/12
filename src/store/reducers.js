@@ -8,6 +8,31 @@ const initialState = {
 
 const empReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "GET_EMPLOYEE":
+      return {
+        ...state
+      };
+    case "ADD_EMPLOYEE":
+      return {
+        ...state,
+        employees: [...state.employees, action.payload]
+      };
+    case "EDIT_EMPLOYEE": {
+      const employees = state.employees.map((emp) => {
+        if (emp.id === action.payload.id) return action.payload;
+        else return emp;
+      });
+
+      return {
+        ...state,
+        employees: employees
+      };
+    }
+    case "DELETE_EMPLOYEE":
+      return {
+        ...state,
+        employees: state.employees.filter((emp) => emp.id !== action.payload)
+      };
     default:
       return state;
   }
