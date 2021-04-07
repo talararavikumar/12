@@ -6,7 +6,7 @@ const initialState = {
   ]
 };
 
-const empReducer = (state = initialState, action) => {
+export const empReducer = (state = initialState, action) => {
   switch (action.type) {
     case "GET_EMPLOYEE":
       return {
@@ -37,5 +37,3 @@ const empReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export default empReducer;

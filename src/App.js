@@ -9,8 +9,8 @@ export default function App() {
     employeeName: "",
     employeeDepartment: ""
   });
-  const employees = useSelector((state) => state.employees);
-
+  const employeesStore = useSelector((state) => state.employees);
+  const { employees } = employeesStore;
   const dispatch = useDispatch();
 
   const handleNameChange = (e) => {
